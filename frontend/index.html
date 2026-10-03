@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAATH – My Resources</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>SAATH – My Resources</h1>
+    <p>Sharing Assets And Things Together for Humanity</p>
+</header>
+
+<div class="container">
+
+    <div class="top-buttons">
+
+        <button class="add-btn" onclick="showAddItem()">
+            + Add Item
+        </button>
+
+        <button class="search-btn" onclick="showSearch()">
+            🔍 Search Item
+        </button>
+
+    </div>
+
+    <!-- ADD ITEM FORM -->
+
+    <div class="add-form" id="addForm">
+
+        <h2>Add New Resource</h2>
+
+        <label>Item Name</label>
+        <input type="text" id="itemName"
+               placeholder="Enter item name">
+
+        <label>Category</label>
+        <select id="itemCategory">
+
+            <option value="Academic">Academic</option>
+            <option value="Books">Books</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Sports">Sports</option>
+            <option value="Household">Household</option>
+            <option value="Tools">Tools</option>
+
+        </select>
+
+        <label>Condition</label>
+        <select id="itemCondition">
+
+            <option value="Good">Good</option>
+            <option value="Very Good">Very Good</option>
+            <option value="New">New</option>
+            <option value="Used">Used</option>
+
+        </select>
+
+        <label>Location</label>
+        <input type="text"
+               id="itemLocation"
+               placeholder="Example: Hostel / College Campus">
+
+        <label>Description</label>
+
+        <textarea id="itemDescription"
+                  placeholder="Enter item description"></textarea>
+
+        <label>Contact</label>
+
+        <input type="text"
+               id="itemContact"
+               placeholder="Enter contact details">
+
+        <label>Sharing</label>
+
+        <select id="itemSharing">
+
+            <option value="Available">Available</option>
+            <option value="Borrow Only">Borrow Only</option>
+            <option value="Free to Take">Free to Take</option>
+
+        </select>
+
+        <button class="add-btn" onclick="addNewItem()">
+            Add Resource
+        </button>
+
+        <button class="close-btn" onclick="hideAddItem()">
+            Close
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH AREA -->
+
+    <div class="search-area"
+         id="searchArea"
+         style="display:none;">
+
+        <label>Search Item</label>
+
+        <input type="text"
+               id="searchInput"
+               placeholder="Search resource..."
+               onkeyup="displayResources()">
+
+        <label>Category</label>
+
+        <select id="categoryFilter"
+                onchange="displayResources()">
+
+            <option value="All">All Categories</option>
+            <option value="Academic">Academic</option>
+            <option value="Books">Books</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Sports">Sports</option>
+            <option value="Household">Household</option>
+            <option value="Tools">Tools</option>
+
+        </select>
+
+    </div>
+
+
+    <!-- RESOURCE HEADING -->
+
+    <div class="resource-heading">
+
+        <h2>Available Resources</h2>
+
+        <span id="resourceCount">
+            0 Items
+        </span>
+
+    </div>
+
+
+    <!-- RESOURCE CARDS -->
+
+    <div class="resource-box"
+         id="resourceBox">
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 SAATH – My Resources |
+        Sharing for Humanity
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
